@@ -1,0 +1,86 @@
+<ion-view title="Carrinho" id="novo_pedido_carrinho" class="">
+    <ion-nav-bar class="bar-positive-pedido">
+        <ion-nav-back-button></ion-nav-back-button>
+        <ion-nav-buttons side="secondary">
+            <button class="button button-clear button-small button-car" ng-click="abreCarrinho()">
+                {{getTotal(cart) | currency}}
+            </button>
+            <span class="quant-button-car">{{getTotalItens(cart)}}</span>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+    <div class="bar bar-subheader bar-dark">
+        <div style="display:block">
+            <div class="title title-left" style="width:75%;">
+                {{cliente.nome}}
+            </div>
+            <button class="button button-clear" ng-click="modal.show()">
+                <i class="icon ion-android-open"></i>
+            </button>
+        </div>
+    </div>
+
+    <ion-content padding="false" class="has-subheader manual-remove-top-padding" scroll="false">
+        <div class="list">
+            <div class="item">
+                <div class="row">
+                    <div class="col">
+                        <p><i class="icon ion-bag"></i> {{cart.products.length }} SKUs, {{getTotalItens(cart)}} produtos</p>
+                    </div>
+                    <div class="col text-right">
+                        <p class="bold" style="color: #28a54c;"><i class="icon ion-ios-pricetags-outline"></i> {{getTotal(cart) | currency}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="item item-divider" ng-if="cart.products.length">
+                <p>Deslize para remover produtos</p>
+            </div>
+            <div class="item item-divider" ng-if="!cart.products.length">
+                <p>Seu pedido está vazio!</p>
+            </div>
+        </div>
+    </ion-content>
+
+    <ion-content padding="false" class="has-subheader manual-remove-top-padding" style="margin-top: 109px !important;">
+        <ion-list can-swipe="true" id="produtos-list">
+            <ion-item class="item-thumbnail-left corrige-padding" ng-repeat="product in cart.products track by $index">
+
+                <img class="produto-in-list" ng-src="{{product.product_thumb.url}}" alt="">
+                <h2  ng-repeat="product_description in product.product_description">{{product_description.name}}</h2>
+                <span class="bold font-14">{{product.price | currency}}</span> <span class="font-14">x {{product.quant}}</span>
+                <span class="bold font-14" style="float:right">{{product.price * product.quant | currency}}</span>
+
+                <ion-option-button class="button-assertive" ng-click="dropProduct($index)">Remover</ion-option-button>
+
+            </ion-item>
+        </ion-list>
+        <div style="height:45px;"></div>
+    </ion-content>
+
+
+
+
+
+    <!--footer-->
+    <ion-footer-bar class="bar" id="pedido-button-footer" ng-if="temProduto()">
+        <div class="botao-left">
+            <a class="button button-clear" ng-click="cancelarPedido(2)">Cancelar</a>
+        </div>
+        <div class="botao-right">
+            <a class="button button-clear icon-right ion-ios-arrow-right pull-right" ng-href="#/side-menu/novo-pedido-checkout/{{cliente.id}}">PRÓXIMO</a>
+        </div>
+    </ion-footer-bar>
+
+</ion-view>
+
+
+<script id="cliente.html" type="text/ng-template">
+    <ion-modal-view>
+        <ion-header-bar>
+            <h1 class="title">Cliente</h1>
+            <button class="button button-clear button-primary" ng-click="modal.hide()">Fechar</button>
+        </ion-header-bar>
+        <ion-content>
+            <sh-cliente-page cliente-objeto="cliente"></sh-cliente-page>
+        </ion-content>
+    </ion-modal-view>
+</script>

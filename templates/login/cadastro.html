@@ -1,0 +1,49 @@
+<ion-view title="Cadastrar" id="cadastrar" class=" " hide-nav-bar="true">
+    <ion-content padding="true" class="login-bg">
+        <div class="row">
+            <div class="col">
+                <ion-list class="login-form">
+                    <label class="item item-input item-floating-label">
+                        <span class="input-label">Primeiro Nome</span>
+                        <input type="text" placeholder="Primeiro Nome" id="signup-fn" ng-model="user.fn" class="login-color">
+                    </label>
+                    <label class="item item-input item-floating-label">
+                        <span class="input-label">Sobrenome</span>
+                        <input type="text" placeholder="Sobrenome" id="signup-ln" ng-model="user.ln" class="login-color">
+                    </label>
+                    <label class="item item-input item-floating-label">
+                        <span class="input-label">Celular</span>
+                        <input type="tel" placeholder="Celular" id="signup-celular" mask="(99)9?9999-9999" ng-model="user.celular" class="login-color">
+                    </label>
+                    <label class="item item-input item-floating-label">
+                        <span class="input-label">E-mail</span>
+                        <input type="text" placeholder="E-mail" id="signup-email" ng-model="user.email" class="login-color">
+                    </label>
+                    <label class="item item-input item-floating-label">
+                        <span class="input-label">CPF</span>
+                        <input type="text" placeholder="CPF" id="signup-cpf" mask="999.999.999-99" ng-model="user.cpf" class="login-color">
+                    </label>
+                    <label class="item item-input item-floating-label">
+                        <span class="input-label">Nome de usuário</span>
+                        <input type="text" placeholder="Nome de usuário" id="signup-username" ng-model="user.username" class="login-color">
+                    </label>
+
+                    <label class="item item-input item-floating-label">
+                        <span class="input-label">Senha <small><b>min. 5 digitos</b></small></span>
+                        <input type="password" placeholder="Senha" id="signup-password" ng-required="" ng-model="user.password" class="login-color">
+                    </label>
+                    <label class="item item-input item-floating-label">
+                        <span class="input-label">Confirmar Senha</span>
+                        <input type="password" placeholder="Confirmar Senha" id="signup-password-confirm" ng-required="" ng-model="user.password2" class="login-color">
+                    </label>
+                    <div class="msg-block" ng-show="senhaerro"> <span class="msg-error">As senhas não conferem</span>
+                    </div>
+                    <button class="button button-block button-royal" ng-click="signup(user)" ng-disabled="!ready">Cadastrar</button>
+                </ion-list>
+            </div>
+        </div>
+    </ion-content>
+    <ion-footer-bar class="bar bar-footer bar-light" ui-sref="login">
+        <h2 class="title">Já tem uma conta?</h2>
+    </ion-footer-bar>
+</ion-view>

@@ -1,0 +1,81 @@
+<ion-view title="Produtos" id="novo_pedido_escolhe_produtos" class=" ">
+
+    <ion-nav-bar class="bar-positive-pedido">
+
+        <ion-nav-back-button class="button-clear" ng-click="cancelarPedido(1)">
+            Cancelar
+        </ion-nav-back-button>
+
+
+        <ion-nav-buttons side="secondary">
+            <button class="button button-clear button-small button-car" ng-click="abreCarrinho()">
+                {{getTotal(cart) | currency}}
+            </button>
+            <span class="quant-button-car">{{getTotalItens(cart)}}</span>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+
+
+    <div class="bar bar-subheader bar-dark">
+        <div style="display:block">
+            <div class="title title-left" style="width:75%;">
+                {{cliente.nome}}
+            </div>
+            <button class="button button-clear" ng-click="modal.show()">
+                <i class="icon ion-android-open"></i>
+            </button>
+        </div>
+        <div>
+
+        </div>
+    </div>
+
+    <ion-content padding="false" class="has-subheader manual-remove-top-padding" scroll="false">
+        <!--Buscador-->
+        <div class="item item-input-inset">
+            <label class="item-input-wrapper">
+                <input type="text" placeholder="buscar produtos" ng-model="searchText">
+            </label>
+            <button class="button button-small button-clear" ng-click="searchText=''">
+                Cancelar
+            </button>
+        </div>
+
+
+        <div id="escolhe_produtos_lists" style="overflow:auto">
+
+            <ion-slide-box slide-tabs-scrollable="true" show-pager="false" ion-slide-tabs on-slide-changed="onSlideChanged(index)">
+
+                <ion-slide ion-slide-tab-label="{{categoria.nome}}" style="height: {{Height}}px" ng-repeat="categoria in categorias">
+                    <div ng-include="templatelist"></div>
+                </ion-slide>
+
+            </ion-slide-box>
+
+        </div>
+
+    </ion-content>
+    <!--footer-->
+    <ion-footer-bar class="bar" id="pedido-button-footer" keyboard-attach>
+        <div class="botao-left">
+            <a class="button button-clear" ng-click="cancelarPedido(1)">Cancelar</a>
+        </div>
+        <div class="botao-right">
+            <a class="button button-clear icon-right ion-ios-arrow-right pull-right" ng-href="#/side-menu/novo-pedido-carrinho/{{cliente.id}}">Próximo</a>
+        </div>
+    </ion-footer-bar>
+</ion-view>
+
+
+
+<script id="cliente.html" type="text/ng-template">
+    <ion-modal-view>
+        <ion-header-bar>
+            <h1 class="title">Cliente</h1>
+            <button class="button button-clear button-primary" ng-click="modal.hide()">Fechar</button>
+        </ion-header-bar>
+        <ion-content>
+            <sh-cliente-page cliente-objeto="cliente"></sh-cliente-page>
+        </ion-content>
+    </ion-modal-view>
+</script>

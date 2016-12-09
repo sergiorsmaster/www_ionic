@@ -1,0 +1,47 @@
+<ion-view title="Resumo" id="novo_pedido_resumo" class=" ">
+    <ion-nav-bar class="bar-positive-pedido">
+        <ion-nav-back-button></ion-nav-back-button>
+        <ion-nav-buttons side="secondary">
+            <button class="button button-clear icon-right ion-ios-arrow-forward" ng-click="concluirPedido()">
+                Concluir
+            </button>
+
+        </ion-nav-buttons>
+    </ion-nav-bar>
+    <div class="bar bar-subheader bar-dark">
+        <div style="display:block">
+            <div class="title title-left" style="width:75%;">
+                {{cliente.nome}}
+            </div>
+            <button class="button button-clear" ng-click="modal.show()">
+                <i class="icon ion-android-open"></i>
+            </button>
+        </div>
+    </div>
+
+    <ion-content padding="false" class="has-subheader manual-remove-top-padding">
+
+        <!-- Diretiva Resumo do pedido -->
+        <sh-resumo-pedido pedidoObjeto="resumoP"></sh-resumo-pedido>
+
+    </ion-content>
+
+    <!--footer-->
+    <ion-footer-bar class="bar" id="resumo_pedido_concluir" ng-click="concluirPedido()">
+        <div class="button-concluir">Concluir</div>
+    </ion-footer-bar>
+
+</ion-view>
+
+
+<script id="cliente.html" type="text/ng-template">
+    <ion-modal-view>
+        <ion-header-bar>
+            <h1 class="title">Cliente</h1>
+            <button class="button button-clear button-primary" ng-click="modal.hide()">Fechar</button>
+        </ion-header-bar>
+        <ion-content>
+            <sh-cliente-page cliente-objeto="cliente"></sh-cliente-page>
+        </ion-content>
+    </ion-modal-view>
+</script>

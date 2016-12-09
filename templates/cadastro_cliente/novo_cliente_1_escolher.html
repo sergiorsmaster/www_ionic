@@ -1,0 +1,21 @@
+<ion-view title="Novo Cliente" id="novo_cliente" class=" ">
+    <ion-content padding="false" class="has-header">
+        <div class="row row-center cliente_escolher cliente_escolher_salao" style="height: {{Height}}px" ng-click="clienteTipo(1)" ui-sref="menu.novo_cliente_salao_endereco">
+            <div class="col text-center">
+                <h2 class="escolher_titulo">Salão de Beleza</h2></div>
+        </div>
+        <div class="row row-center cliente_escolher cliente_escolher_cabeleireiro" style="height: {{Height}}px" ng-click="clienteTipo(2)" ui-sref="menu.novo_cliente_profissional_endereco">
+            <div class="col text-center">
+                <h2 class="escolher_titulo">Profissional Cabeleireiro(a)</h2></div>
+        </div>
+        <div class="row row-center cliente_escolher cliente_escolher_clientefinal" style="height: {{Height}}px" ng-click="clienteDisabled()">
+            <div class="col text-center">
+                <h2 class="escolher_titulo">Cliente Final</h2></div>
+        </div>
+
+
+
+
+    </ion-content>
+
+</ion-view>

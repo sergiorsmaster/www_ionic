@@ -1,0 +1,57 @@
+<!-- Pedidos-->
+<div class="list card manual-card-fullwidth manual-card-margin-top-remove  manual-card-margin-bottom-remove padding">
+    <div class="item item-input-inset">
+        <label class="item-input-wrapper">
+            <input type="text" placeholder="buscar">
+        </label>
+        <button class="button button-small button-clear">
+            Cancelar
+        </button>
+    </div>
+</div>
+<ion-list id="cliente-pedido-list">
+    <ion-item class="item-icon-right pedido-barrinha pendente" ng-href="#/side-menu/cliente-pedido-resumo/1">
+        <div class="pedido-list-col-1">
+            <h2>2479</h2>
+            <p>pendente</p>
+        </div>
+        <div class="pedido-list-col-2">
+            <p>25/07/2016</p>
+            <p><span>R$ 2.000,00</span></p>
+        </div>
+        <i class="icon ion-ios-arrow-right"></i>
+    </ion-item>
+    <ion-item class="item-icon-right pedido-barrinha entregue" ng-href="#/side-menu/cliente-pedido-resumo/1">
+        <div class="pedido-list-col-1">
+            <h2 id="num_pedido">2479</h2>
+            <p id="status_pedido">pendente</p>
+        </div>
+        <div class="pedido-list-col-2">
+            <p id="data_pedido">25/07/2016</p>
+            <p id="valor_pedido"><span>R$ 2.000,00</span></p>
+        </div>
+        <i class="icon ion-ios-arrow-right"></i>
+    </ion-item>
+    <ion-item class="item-icon-right pedido-barrinha aprovado" ng-href="#/side-menu/cliente-pedido-resumo/1">
+        <div class="pedido-list-col-1">
+            <h2>2479</h2>
+            <p>pendente</p>
+        </div>
+        <div class="pedido-list-col-2">
+            <p>25/07/2016</p>
+            <p><span>R$ 2.000,00</span></p>
+        </div>
+        <i class="icon ion-ios-arrow-right"></i>
+    </ion-item>
+    <ion-item class="item-icon-right pedido-barrinha cancelado" ng-href="#/side-menu/cliente-pedido-resumo/1">
+        <div class="pedido-list-col-1">
+            <h2>2479</h2>
+            <p>pendente</p>
+        </div>
+        <div class="pedido-list-col-2">
+            <p>25/07/2016</p>
+            <p><span>R$ 2.000,00</span></p>
+        </div>
+        <i class="icon ion-ios-arrow-right"></i>
+    </ion-item>
+</ion-list>

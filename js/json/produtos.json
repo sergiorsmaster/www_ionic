@@ -1,0 +1,202 @@
+[
+    {
+        "id": "1",
+        "cod": "1011",
+        "img": "1011_the_first.jpg",
+        "thumb": "1011_the_first_thumb.jpg",
+        "nome": "Shampoo The First 980ml",
+        "valor": "450.00",
+        "cat": "1",
+        "status": "1"
+    },
+    {
+        "id": "2",
+        "cod": "1012",
+        "img": "1012_lovely.jpg",
+        "thumb": "1012_lovely_thumb.jpg",
+        "nome": "Passo 1 Escova Sweet",
+        "valor": "250.00",
+        "cat": "1",
+        "status": "1"
+    },
+    {
+        "id": "3",
+        "cod": "1013",
+        "img": "1013_lovely2.jpg",
+        "thumb": "1013_lovely2_thumb.jpg",
+        "nome": "Passo 2 Escova Sweet",
+        "valor": "280.00",
+        "cat": "1",
+        "status": "1"
+    },
+    {
+        "id": "4",
+        "cod": "1014",
+        "img": "1014_lovely3.jpg",
+        "thumb": "1014_lovely3_thumb.jpg",
+        "nome": "Passo 3 Escova Sweet",
+        "valor": "280.00",
+        "cat": "1",
+        "status": "1"
+    },
+    {
+        "id": "5",
+        "cod": "1015",
+        "img": "1015_cronos1.jpg",
+        "thumb": "1015_cronos1_thumb.jpg",
+        "nome": "Biotechnology Shampoo 1",
+        "valor": "280.00",
+        "cat": "2",
+        "status": "1"
+    },
+    {
+        "id": "6",
+        "cod": "1016",
+        "img": "1016_cronos2.jpg",
+        "thumb": "1016_cronos2_thumb.jpg",
+        "nome": "Biotechnology Hair Cream",
+        "valor": "320.00",
+        "cat": "2",
+        "status": "1"
+    },
+    {
+        "id": "7",
+        "cod": "1017",
+        "img": "1017_sos1.jpg",
+        "thumb": "1017_sos1_thumb.jpg",
+        "nome": "S.O.S 1 - Regeneration",
+        "valor": "220.00",
+        "cat": "2",
+        "status": "1"
+    },
+    {
+        "id": "8",
+        "cod": "1018",
+        "img": "1018_sos2.jpg",
+        "thumb": "1018_sos2_thumb.jpg",
+        "nome": "S.O.S 2 - Regeneration",
+        "valor": "290.00",
+        "cat": "2",
+        "status": "1"
+    },
+    {
+        "id": "9",
+        "cod": "1019",
+        "img": "1019_royal.jpg",
+        "thumb": "1019_royal_thumb.jpg",
+        "nome": "Coloração 1.0 Royal Colour",
+        "valor": "40.00",
+        "cat": "3",
+        "status": "1"
+    },
+    {
+        "id": "10",
+        "cod": "1020",
+        "img": "1020_royal.jpg",
+        "thumb": "1020_royal_thumb.jpg",
+        "nome": "Pó Descolorante",
+        "valor": "70.00",
+        "cat": "3",
+        "status": "1"
+    },
+    {
+        "id": "11",
+        "cod": "1021",
+        "img": "1021_cronos.jpg",
+        "thumb": "1021_cronos_thumb.jpg",
+        "nome": "Shampoo e Demaquilante Cronology",
+        "valor": "40.00",
+        "cat": "4",
+        "status": "1"
+    },
+    {
+        "id": "12",
+        "cod": "1022",
+        "img": "1022_cronos2.jpg",
+        "thumb": "1022_cronos2_thumb.jpg",
+        "nome": "Condicionador e Creme Corporal Cronology",
+        "valor": "42.90",
+        "cat": "4",
+        "status": "1"
+    },
+    {
+        "id": "13",
+        "cod": "1023",
+        "img": "1023_efervecente.jpg",
+        "thumb": "1023_efervecente_thumb.jpg",
+        "nome": "Tratamento Efervecente",
+        "valor": "46.50",
+        "cat": "4",
+        "status": "1"
+    },
+    {
+        "id": "14",
+        "cod": "1024",
+        "img": "1024_po.jpg",
+        "thumb": "1024_po_thumb.jpg",
+        "nome": "Shampoo em pó",
+        "valor": "66.90",
+        "cat": "5",
+        "status": "1"
+    },
+    {
+        "id": "15",
+        "cod": "1025",
+        "img": "1025_cachos.jpg",
+        "thumb": "1025_cachos_thumb.jpg",
+        "nome": "Shampoo Cachos",
+        "valor": "46.90",
+        "cat": "5",
+        "status": "1"
+    },
+    {
+        "id": "16",
+        "cod": "1026",
+        "img": "1026_pomada.jpg",
+        "thumb": "1026_pomada_thumb.jpg",
+        "nome": "Pomada Capilar",
+        "valor": "47.90",
+        "cat": "6",
+        "status": "1"
+    },
+    {
+        "id": "17",
+        "cod": "1027",
+        "img": "1027_spray.jpg",
+        "thumb": "1027_spray_thumb.jpg",
+        "nome": "Hair Spray Finalzador",
+        "valor": "56.90",
+        "cat": "6",
+        "status": "1"
+    },
+    {
+        "id": "18",
+        "cod": "1028",
+        "img": "1028_mousse1.jpg",
+        "thumb": "1028_mousse1_thumb.jpg",
+        "nome": "Shampooo Nutrição Diária Mousse",
+        "valor": "56.90",
+        "cat": "4",
+        "status": "1"
+    },
+    {
+        "id": "19",
+        "cod": "1029",
+        "img": "1029_mousse2.jpg",
+        "thumb": "1029_mousse2_thumb.jpg",
+        "nome": "Condicionador Nutrição Diária Mousse",
+        "valor": "56.90",
+        "cat": "4",
+        "status": "1"
+    },
+    {
+        "id": "19",
+        "cod": "1029",
+        "img": "1029_mousse2.jpg",
+        "thumb": "1029_mousse2_thumb.jpg",
+        "nome": "Condicionador Nutrição Diária Mousse",
+        "valor": "56.90",
+        "cat": "4",
+        "status": "1"
+    }
+]

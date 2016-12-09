@@ -1,0 +1,32 @@
+<ion-view title="Login" id="login" class=" " hide-nav-bar="true">
+    <ion-content padding="true" class="login-bg" scroll="false">
+        <div class="row">
+            <div class="col">
+                <div style="text-align:center;margin-top:30px;margin-bottom:20px;">
+                    <img src="img/logo_sweet_home.png" alt="" style="max-width:80%; width:70%; margin-left:auto; margin-right:auto;">
+                </div>
+                <form id="login-form" class="login-form list ">
+                    <label class="item item-input item-floating-label" id="meuPrimeiroApp-input2">
+                        <span class="input-label">Usuário</span>
+                        <input type="text" placeholder="Usuário" id="username" ng-model="user.username" ng-trim="false" class="login-color">
+                    </label>
+                    <label class="item item-input item-floating-label" id="meuPrimeiroApp-input1">
+                        <span class="input-label">Senha</span>
+                        <input type="password" placeholder="Senha" id="password" ng-model="user.password" class="login-color">
+                    </label>
+                    <button id="login-button" class="button button-calm button-block" ng-click="login(user)" ng-disabled="!ready">Entrar</button>
+                </form>
+                <div class="text-center">
+                    <a class="button button-clear" ui-sref="resetpass">Esqueci minha senha</a>
+                </div>
+
+                <div style="height:10px;"></div>
+                <div class="row">
+                    <div class="col text-center">
+                        <a ui-sref="cadastro" class="button button-block button-royal">Quero ser um promotor!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

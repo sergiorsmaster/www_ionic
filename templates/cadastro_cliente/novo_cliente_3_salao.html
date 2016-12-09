@@ -1,0 +1,74 @@
+<ion-view title="Novo Cliente" id="novo_cliente_salao" class=" ">
+
+    <form ng-submit="clienteFormGo('salao',novocliente.salao,'menu.novo_cliente_pessoa')" id="clienteSalaoForm">
+        <ion-content padding="false" class="has-header">
+            <div ng-switch="cliente_tipo">
+                <div class="row row-center cliente_escolher cliente_escolher_salao" style="height: 120px" ng-switch-when="1">
+                    <div class="col text-center">
+                        <h2 class="escolher_titulo">Salão de Beleza</h2>
+                    </div>
+                </div>
+                <div class="row row-center cliente_escolher cliente_escolher_cabeleireiro" style="height: 120px" ng-switch-when="2">
+                    <div class="col text-center">
+                        <h2 class="escolher_titulo">Profissional Cabeleireiro(a)</h2>
+                    </div>
+                </div>
+            </div>
+
+            <ion-list>
+                <div ng-switch="cliente_tipo">
+                    <div class="item item-divider item-text-wrap" ng-switch-when="1">
+                        <i class="ion-android-home"></i> <b>Dados do Salão</b>
+                        <br><small>Obs: Dados públicos</small>
+                    </div>
+                    <div class="item item-divider item-text-wrap" ng-switch-when="2">
+                        <i class="ion-android-home"></i> <b>Dados do Salão que este profissional atua</b>
+                        <br><small>Obs: Dados públicos</small>
+                    </div>
+                </div>
+
+                <label class="item item-input">
+                    <span class="input-label">Nome do Salão <span class="campo_obrigatorio">*</span></span>
+                    <input type="text" name="clientesalaonomefantasia" ng-model="novocliente.salao.salao_nome_fantasia">
+                </label>
+                <div class="item item-divider item-text-wrap">
+                    <i class="ion-android-contacts"></i><b> Contatos do Salão:</b>
+                </div>
+                <label class="item item-input">
+                    <span class="input-label"><i class="icon ion-android-call font-20"></i> Telefone fixo:</span>
+                    <input type="tel" name="clientesalaotelfixo" ng-model="novocliente.salao.salao_tel_fixo" mask="(99) 9999-9999">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label"><i class="icon ion-social-whatsapp-outline font-20"></i> Celular do Salão:</span>
+                    <input type="tel" name="clientesalaocelular" ng-model="novocliente.salao.salao_celular" mask="(99) 9?9999-9999">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label"><i class="icon ion-email font-20"></i> E-mail:</span>
+                    <input type="email" name="clientesalaoaemail" ng-model="novocliente.salao.salao_email">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label"><i class="icon ion-earth font-20"></i> Site:</span>
+                    <input type="text" name="clientesalaocelular" ng-model="novocliente.salao.salao_site">
+                </label>
+                <div class="row item">
+                    <div class="col">
+                        <p><span class="campo_obrigatorio">*</span> Campos obrigatórios</p>
+                    </div>
+                </div>
+            </ion-list>
+
+
+
+        </ion-content>
+        <!--footer-->
+        <ion-footer-bar class="bar" id="novocliente-button-footer" keyboard-attach>
+            <div class="botao-left">
+                <a class="button button-clear" ng-click="cancelarnovocliente()">Cancelar</a>
+            </div>
+            <div class="botao-right">
+                <button type="submit" form="clienteSalaoForm" class="button button-clear pull-right icon-right ion-ios-arrow-forward" ng-disabled="!novocliente.salao.salao_nome_fantasia">Próximo</button>
+            </div>
+        </ion-footer-bar>
+
+    </form>
+</ion-view>

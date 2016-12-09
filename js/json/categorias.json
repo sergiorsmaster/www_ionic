@@ -1,0 +1,26 @@
+[
+    {
+        "id": "1",
+        "nome": "Alisamento"
+    },
+    {
+        "id": "2",
+        "nome": "Tratamentos"
+    },
+    {
+        "id": "3",
+        "nome": "Coloração"
+    },
+    {
+        "id": "5",
+        "nome": "Alto impacto"
+    },
+    {
+        "id": "4",
+        "nome": "Manutenção"
+    },
+    {
+        "id": "6",
+        "nome": "Finalização"
+    }
+]

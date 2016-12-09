@@ -1,0 +1,73 @@
+<ion-view title="Meu perfil" id="perfil" class=" ">
+    <ion-content padding="false" class="has-header manual-remove-top-padding">
+        <div class="area-perfil background-perfil">
+
+            <div class="row">
+                <div class="col text-center pt10">
+                    <div class="foto-perfil">
+                        <img src="img/generic_user.png" class="borda-perfil img-perfil">
+                        <!--
+                       <img src="https://randomuser.me/api/portraits/men/33.jpg" class="borda-perfil foto-indicador">
+<div class="link-indicador"></div>
+-->
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col text-center nome-perfil">
+                    <h2>{{promoNome}}</h2>
+                    <p>Filial Tatuapé</p>
+                </div>
+            </div>
+            <div class="row" style="background-color:rgba(0,0,0,.1);height:50px;color:#fff">
+                <div class="col text-center" style="border-right: 1px solid #fff;">
+                    Clientes
+                    <br>
+                    <span>56</span>
+                </div>
+                <div class="col text-center">
+                    <p>Indicações
+                        <br>
+                        <span>10</span></p>
+                </div>
+                <!--
+                <div class="col text-center">
+    <p>Pontuação
+        <br>
+        <span>4.45</span></p>
+</div>
+-->
+            </div>
+        </div>
+        <!--Meu perfil-->
+        <ion-list>
+            <div class="item item-divider">
+                Meus dados
+            </div>
+            <ion-item class="item-icon-left icons-perfil">
+                <p><i class="icon ion-person"></i> {{promoNome}} {{promoSobrenome}}</p>
+            </ion-item>
+            <ion-item class="item-icon-left icons-perfil">
+                <p><i class="icon ion-email"></i> {{promoEmail}}</p>
+            </ion-item>
+            <!--
+<ion-item class="item-icon-left icons-perfil">
+    <p><i class="icon ion-ios-telephone"></i> (11) 2227-8600</p>
+</ion-item>
+-->
+            <ion-item class="item-icon-left icons-perfil">
+                <p><i class="icon ion-social-whatsapp"></i> {{promoCelular}}</p>
+            </ion-item>
+            <ion-item class="item-icon-left icons-perfil">
+                <p><i class="icon ion-checkmark-round"></i> {{promoCpf}}</p>
+            </ion-item>
+            <!--
+<ion-item class="item-icon-left icons-perfil item-text-wrap">
+    <p><i class="icon ion-ios-location"></i> Rua Coelho Lisboa, 556 - sala 2 - Tatuapé</p>
+</ion-item>
+-->
+        </ion-list>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,39 @@
+<ion-view title="Novo Cliente" id="novo_cliente_foto" class=" ">
+    <ion-content padding="false" class="has-header">
+
+        <ion-list>
+            <div class="item item-divider item-text-wrap">
+                Etapa final, escolha uma foto bonita do salão para aparacer em nosso site ;)
+            </div>
+            <ion-item>
+                <img ng-if="imagemsrc" ng-src="{{imagemsrc}}" style="width:100%">
+            </ion-item>
+
+
+
+            <ion-item class="text-center item-text-wrap">
+                <span class="font-20" ng-show="imagemsrc">Não gostei, vou escolher outra</span>
+                <div class="row">
+                    <div class="col text-center">
+                        <i class="icon ion-camera font-50" ng-click="tirarFoto()"></i>
+                    </div>
+                    <div class="col text-center">
+                        <i class="icon ion-image font-50" ng-click="pegarFoto()"></i>
+                    </div>
+                </div>
+
+
+            </ion-item>
+
+
+        </ion-list>
+
+        <div style="height:40px"></div>
+
+    </ion-content>
+    <!--footer-->
+    <ion-footer-bar class="bar bar-balanced" keyboard-attach>
+        <!--       ng-if="imagemsrc"-->
+        <button class="button button-clear pull-right icon-right ion-ios-arrow-forward" ui-sref="menu.novo_cliente_resumo">Gostei, aprovar cadastro</button>
+    </ion-footer-bar>
+</ion-view>

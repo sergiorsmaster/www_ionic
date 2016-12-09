@@ -1,0 +1,27 @@
+<div id="map" data-tap-disabled="true" style="height: 230px;"></div>
+
+<div class="list card manual-card-fullwidth manual-card-margin-top-remove manual-card-margin-bottom-remove">
+    <div class="item cliente-titulo">
+        <div ng-switch="clienteObjeto.cliente_tipo">
+            <div class="cliente-titulo padding" ng-switch-when="1">
+                <h1>{{clienteObjeto.salao.salao_nome_fantasia}}</h1>
+                <p>{{clienteObjeto.endereco.localidade}} - {{clienteObjeto.endereco.uf}}</p>
+            </div>
+            <div class="cliente-titulo padding" ng-switch-when="2">
+                <h1 ng-if="clienteObjeto.pessoa.nome_artistico">{{clienteObjeto.pessoa.nome_artistico}}</h1>
+                <h1 ng-if="!clienteObjeto.pessoa.nome_artistico">{{clienteObjeto.pessoa.nome}}</h1>
+                <p>{{clienteObjeto.endereco.localidade}} - {{clienteObjeto.endereco.uf}}</p>
+            </div>
+        </div>
+
+    </div>
+    <div class="item">
+        <div class="button-bar">
+            <button class="button button-small button-positive" ng-class="{'button-outline': btn_out_1}" ng-click="toggleTabCliente(1)" ng-init="toggleTabCliente(1)">Detalhes</button>
+            <button class="button button-small button-positive" ng-class="{'button-outline': btn_out_2}" ng-click="toggleTabCliente(2)">Pedidos</button>
+<!--            <button class="button button-small button-positive" ng-class="{'button-outline': btn_out_3}" ng-click="toggleTabCliente(3)">Produtos</button>-->
+
+        </div>
+    </div>
+</div>
+<div ng-include="templateUrl"></div>

@@ -1,0 +1,22 @@
+<ion-view>
+    <ion-content scroll="true">
+        <ion-list id="produtos-list" ng-repeat="produto in produtos | filter: {product_category: categoria.id} | filter: searchText as resultados track by $index">
+            <ion-item class="item-thumbnail-left corrige-padding item-icon-right item-text-wrap" ng-click="addProduct(produto,produto.product_id, $index)">
+                <!--                <small>{{produto}}</small>-->
+                <img class="produto-in-list" ng-src="{{produto.product_thumb.url}}">
+                <!--                <img class="produto-in-list" ng-src="img/produtos/{{produto.thumb}}">-->
+                <h2 ng-repeat="product_description in produto.product_description">{{produto.sku}} - {{product_description.name}}</h2>
+                <span class="balanced bold font-14">{{produto.price | currency}}</span> <span class="font-14">x {{quantItem(produto.product_id)}}</span>
+                <i class="icon ion-checkmark-circled balanced" ng-if="produto.quant = quantItem(produto.product_id)"></i>
+            </ion-item>
+            <ion-item ng-if="resultados.length === 0">
+                <p>Não há <strong>{{searchText}}</strong> em {{categoria.nome}}</p>
+            </ion-item>
+        </ion-list>
+        <div style="height:44px;"></div>
+    </ion-content>
+
+</ion-view>
+
+
+<!--| filter: {cat: categoria.id} | filter: searchText as results track by $inde'x-->

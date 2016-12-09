@@ -1,0 +1,105 @@
+<ion-view title="Novo Cliente" id="novo_cliente_pessoa" class=" ">
+    <form ng-submit="clienteFormGo('pessoa',novocliente.pessoa,'menu.novo_cliente_dados')" id="clientePessoaForm">
+        <ion-content padding="false" class="has-header">
+            <div ng-switch="cliente_tipo">
+                <div class="row row-center cliente_escolher cliente_escolher_salao" style="height: 120px" ng-switch-when="1">
+                    <div class="col text-center">
+                        <h2 class="escolher_titulo">Salão de Beleza</h2>
+                    </div>
+                </div>
+                <div class="row row-center cliente_escolher cliente_escolher_cabeleireiro" style="height: 120px" ng-switch-when="2">
+                    <div class="col text-center">
+                        <h2 class="escolher_titulo">Profissional Cabeleireiro(a)</h2>
+                    </div>
+                </div>
+            </div>
+
+            <ion-list>
+                <div ng-switch="cliente_tipo">
+                    <div class="item item-divider item-text-wrap" ng-switch-when="1">
+                        <i class="ion-android-person"></i><b> Dados Pessoais do responsável</b>
+                        <br><small>não divulgado</small>
+                    </div>
+                    <div class="item item-divider item-text-wrap" ng-switch-when="2">
+                        <i class="ion-android-person"></i><b> Dados Pessoais do Cabeleireiro</b>
+                        <br>
+                    </div>
+                </div>
+                <label class="item item-input">
+                    <span class="input-label">Nome: <span class="campo_obrigatorio">*</span></span>
+                    <input type="text" name="clientepessoanome" ng-model="novocliente.pessoa.pessoa_nome" required>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Sobrenome: <span class="campo_obrigatorio">*</span></span>
+                    <input type="text" name="clientepessoasobrenome" ng-model="novocliente.pessoa.pessoa_sobrenome" required>
+                </label>
+                <div ng-switch="cliente_tipo">
+                    <label class="item item-input" ng-switch-when="2">
+                        <span class="input-label">Nome artístico: <span class="campo_obrigatorio">*</span></span>
+                        <input type="text" name="clientepessoanomeartistico" ng-model="novocliente.pessoa.nome_artistico">
+                    </label>
+                </div>
+                <label class="item item-input">
+                    <span class="input-label">Data de Nasc.</span>
+                    <input type="date" name="clientepessoadatanas" ng-model="novocliente.pessoa.pessoa_data_nasc">
+                </label>
+                <div class="item item-divider item-text-wrap">
+                    <b>Sexo:</b>
+                </div>
+                <ion-radio ng-model="novocliente.pessoa.sexo" ng-value="'Masculino'" name="sexo">
+                    Masculino
+                </ion-radio>
+                <ion-radio ng-model="novocliente.pessoa.sexo" ng-value="'Feminino'" name="sexo">
+                    Feminino
+                </ion-radio>
+
+                <div class="item item-divider item-text-wrap">
+                    <i class="ion-android-contacts"></i><b> Contatos:</b>
+                </div>
+                <label class="item item-input">
+                    <span class="input-label"><i class="icon ion-email font-20"></i> E-mail:</span>
+                    <input type="email" name="clientepessoaemail" ng-model="novocliente.pessoa.pessoa_email">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label"><i class="icon ion-android-call font-20"></i> Telefone fixo:</span>
+                    <input type="tel" name="clientepessoatelfixo" ng-model="novocliente.pessoa.pessoa_tel_fixo" mask="(99) 9999-9999">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label"><i class="icon ion-social-whatsapp-outline font-20"></i> Celular: <span class="campo_obrigatorio">*</span></span>
+                    <input type="tel" name="clientepessoacelular" ng-model="novocliente.pessoa.pessoa_celular" mask="(99) 9?9999-9999">
+                </label>
+                <div ng-switch="cliente_tipo">
+                    <div ng-switch-when="1">
+                        <div class="item item-divider item-text-wrap">
+                            <i class="ion-android-contacts"></i><b> O responsável é:</b>
+                        </div>
+                        <ion-radio ng-model="novocliente.pessoa.ocupacao" ng-value="'Proprietário(a)'" name="ocupacao">Proprietário(a) do Salão</ion-radio>
+                        <ion-radio ng-model="novocliente.pessoa.ocupacao" ng-value="'Funcionário(a)'" name="ocupacao">Funcionário(a) do Salão</ion-radio>
+
+                    </div>
+                    <div ng-switch-when="2">
+                        <input type="hidden" name="ocupacao" ng-model="novocliente.pessoa.ocupacao" ng-init="novocliente.pessoa.ocupacao = 'Cabeleireiro(a)'">
+                    </div>
+                </div>
+                <div class="row item">
+                    <div class="col">
+                        <p><span class="campo_obrigatorio">*</span> Campos obrigatórios</p>
+                    </div>
+                </div>
+            </ion-list>
+
+
+
+        </ion-content>
+        <!--footer-->
+        <ion-footer-bar class="bar" id="novocliente-button-footer" keyboard-attach>
+            <div class="botao-left">
+                <a class="button button-clear" ng-click="cancelarnovocliente()">Cancelar</a>
+            </div>
+            <div class="botao-right">
+                <button type="submit" form="clientePessoaForm" class="button button-clear pull-right icon-right ion-ios-arrow-forward" ng-disabled="!novocliente.pessoa.pessoa_nome || !novocliente.pessoa.pessoa_sobrenome || !novocliente.pessoa.pessoa_celular">Próximo</button>
+            </div>
+        </ion-footer-bar>
+
+    </form>
+</ion-view>

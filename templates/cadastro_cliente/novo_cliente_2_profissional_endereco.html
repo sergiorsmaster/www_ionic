@@ -1,0 +1,88 @@
+<ion-view title="Novo Cliente" id="novo_cliente" class=" ">
+    <form id="clienteEndForm" ng-submit="clienteFormGo('endereco',novocliente.endereco,'menu.novo_cliente_salao')">
+        <ion-content padding="false" class="has-header">
+            <div class="row row-center cliente_escolher cliente_escolher_cabeleireiro" style="height: 120px">
+                <div class="col text-center">
+                    <h2 class="escolher_titulo">Profissional Cabeleireiro(a)</h2>
+                </div>
+            </div>
+
+            <ion-list>
+                <div class="item item-divider item-text-wrap text-center">
+                    <h2>Endereço de entrega</h2>
+                    <p>Coloque o CEP do seu cliente que nós vamos procurar o endereço para você.</p>
+
+                </div>
+
+                <div class="item item-input-inset">
+                    <label class="item-input-wrapper">
+                        <span class="input-label">CEP:</span>
+                        <input type="tel" placeholder="00000-000" name="cliente_cep" ng-model="novocliente.endereco.cliente_cep" mask="99999-999">
+                    </label>
+                    <a class="button button-small button-positive icon ion-search" ng-click="buscaCEP(novocliente.endereco.cliente_cep)"></a>
+                </div>
+                <div ng-show="mostraEndereco">
+
+                    <div class="item item-divider"></div>
+                    <label class="item item-input">
+
+                        <span class="input-label">Endereço:</span>
+                        <input type="text" name="endereco" ng-model="novocliente.endereco.logradouro">
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label">Número: <span class="campo_obrigatorio">*</span></span>
+                        <input type="number" name="numero" required ng-model="novocliente.endereco.numero">
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label">Complemento:</span>
+                        <input type="text" name="complemento" ng-model="novocliente.endereco.complemento">
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label">Bairro:</span>
+                        <input type="text" name="bairro" ng-model="novocliente.endereco.bairro">
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label">Cidade:</span>
+                        <input type="text" name="cidade" ng-model="novocliente.endereco.localidade">
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label">Estado</span>
+                        <input type="text" name="estado" ng-model="novocliente.endereco.uf">
+                    </label>
+                    <div class="item item-divider item-text-wrap">
+                        <b>Este endereço é: <span class="campo_obrigatorio">*</span></b>
+                    </div>
+                    <ion-radio ng-model="novocliente.endereco.local" ng-value="'Salão'" name="local">Do Salão</ion-radio>
+                    <ion-radio ng-model="novocliente.endereco.local" ng-value="'Casa'" name="local">Da casa do cliente</ion-radio>
+                    <div class="row item">
+                        <div class="col">
+                            <p><span class="campo_obrigatorio">*</span> Campos obrigatórios</p>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col text-center">
+                            <p>Este endereço está errado?</p>
+                            <p>Por favor, edite as informações acima.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </ion-list>
+
+
+
+
+        </ion-content>
+        <!--footer-->
+        <ion-footer-bar class="bar" id="novocliente-button-footer" keyboard-attach>
+            <div class="botao-left">
+                <a class="button button-clear" ng-click="cancelarnovocliente()">Cancelar</a>
+            </div>
+            <div class="botao-right">
+                <button type="submit" class="button button-clear pull-right icon-right ion-ios-arrow-forward" ng-disabled="!mostraEndereco || !novocliente.endereco.numero || !novocliente.endereco.local">Próximo</button>
+            </div>
+        </ion-footer-bar>
+    </form>
+</ion-view>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <script src="http://maps.google.com/maps/api/js?key=AIzaSyCx2MwIfdqKtkUOjvepFJlACyel2bXDxUQ&sensor=true"></script>
+
+
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="lib/ng-cordova.min.js"></script>
+    <script src="cordova.js"></script>
+
+    <!-- compiled css output -->
+
+    <link href="css/ionic.app.css" rel="stylesheet">
+
+    <link href="css/custom.css" rel="stylesheet">
+
+
+    <style type="text/css">
+        .platform-ios .manual-ios-statusbar-padding {
+            padding-top: 20px;
+        }
+        
+        .manual-remove-top-padding {
+            padding-top: 0px;
+        }
+        
+        .manual-remove-top-padding .scroll {
+            padding-top: 0px !important;
+        }
+        
+        ion-list.manual-list-fullwidth div.list,
+        .list.card.manual-card-fullwidth {
+            margin-left: -10px;
+            margin-right: -10px;
+        }
+        
+        ion-list.manual-list-fullwidth div.list > .item,
+        .list.card.manual-card-fullwidth > .item {
+            border-radius: 0px;
+            border-left: 0px;
+            border-right: 0px;
+        }
+    </style>
+
+    <script src="js/locale/angular-locale_pt-br.js"></script>
+    <!--Extra Libs-->
+    <script src="lib/parse-js-sdk/lib/parse.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/controllers.js"></script>
+    <script src="js/controllers/novoPedidoCtrl.js"></script>
+    <script src="js/controllers/novoClienteCtrl.js"></script>
+    <script src="js/controllers/loginCtrl.js"></script>
+    <script src="js/config/routes.js"></script>
+    <script src="js/services/services.js"></script>
+    <script src="js/directives/pagClienteDirective.js"></script>
+    <script src="js/directives/resumoPedidoDirective.js"></script>
+    <script src="js/directives/slidingTabsDirective.js"></script>
+    <script src="js/directives/ngMask.min.js"></script>
+    <!--Factories-->
+    <script src="js/factories/core.js"></script>
+
+    <!-- Only required for Tab projects w/ pages in multiple tabs 
+    <script src="lib/ionicuirouter/ionicUIRouter.js"></script>
+    -->
+
+</head>
+<!--  animation="slide-left-right-ios7"-->
+
+<body ng-app="appSweet" animation="slide-left-right-ios7">
+    <div>
+        <div>
+            <ion-nav-bar class="bar-light">
+                <ion-nav-back-button class="button-icon icon ion-ios-arrow-back">Voltar</ion-nav-back-button>
+            </ion-nav-bar>
+            <ion-nav-view></ion-nav-view>
+        </div>
+    </div>
+</body>
+
+</html>

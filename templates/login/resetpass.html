@@ -1,0 +1,32 @@
+<ion-view title="Esqueci minha senha" id="resetpass" hide-nav-bar="true">
+    <ion-content padding="true" class="login-bg" scroll="false">
+        <div class="row">
+            <div class="col">
+                <button class="button button-icon ion-chevron-left" ui-sref="login"> Voltar</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col text-center">
+                <h3 style="color:#ccc;">Esqueceu sua senha?</h3>
+                <h4 style="color:#ccc;">Por favor, preencha com o e-mail cadastrado que enviaremos para você.</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <ion-list class="login-form">
+                    <label class="item item-input item-floating-label">
+                        <span class="input-label">E-mail</span>
+                        <input type="text" placeholder="E-mail" id="reset-email" ng-model="user.email" class="login-color">
+                    </label>
+                    <button class="button button-block button-calm" ng-click="reset(user.email)" ng-disabled="!ready">ENVIAR</button>
+                </ion-list>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col text-center">
+                <button class="button button-outline button-small" ui-sref="login" style="color:#ccc; border-color:#ccc;">Cancelar</button>
+            </div>
+        </div>
+    </ion-content>
+
+</ion-view>

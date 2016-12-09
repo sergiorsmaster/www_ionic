@@ -1,0 +1,47 @@
+<ion-view title="Novo Cliente" id="novo_cliente_equipe" class=" ">
+    <form ng-submit="clienteFormGo(novocliente,'menu.novo_cliente_foto')" id="clienteEquipeForm">
+        <ion-content padding="false" class="has-header">
+
+            <ion-list>
+                <div class="item item-divider item-text-wrap">
+                    Cadastre um membro da equipe deste cliente
+                </div>
+                <div class="item item-divider item-text-wrap">
+                    <p>Esta pessoa é...</p>
+                </div>
+
+                <ion-radio ng-model="novocliente.equipe.pessoa" ng-value="'proprietario'" name="equipe">Proprietário(a) do salão</ion-radio>
+                <ion-radio ng-model="novocliente.equipe.pessoa" ng-value="'cabeleireiro'" name="equipe">Cabeleireiro(a) do salão</ion-radio>
+                <div class="item item-divider item-text-wrap"></div>
+
+                <label class="item item-input">
+                    <span class="input-label">Nome</span>
+                    <input type="text" name="nome" ng-model="novocliente.equipe.nome" ng-init="novocliente.equipe.nome = 'Antonio Netto'">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Data de Nasc.</span>
+                    <input type="date" name="datanas" ng-model="novocliente.equipe.datanas">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Celular</span>
+                    <input type="tel" name="equipe_celular" ng-model="novocliente.equipe.celular" mask="(99)9?9999-9999" required>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">E-mail</span>
+                    <input type="email" name="equipe_email" ng-model="novocliente.equipe.email" ng-init="novocliente.equipe.email = 'netto@salaonetto.com.br'">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">CPF</span>
+                    <input type="tel" name="cpf" ng-model="novocliente.equipe.cpf" mask="999.999.999-99">
+                </label>
+            </ion-list>
+
+
+
+        </ion-content>
+        <!--footer-->
+        <ion-footer-bar class="bar bar-balanced" keyboard-attach>
+            <button type="submit" form="clienteEquipeForm" class="button button-clear pull-right icon-right ion-ios-arrow-forward" ng-disabled="!novocliente.equipe.pessoa || !novocliente.equipe.celular">Próximo</button>
+        </ion-footer-bar>
+    </form>
+</ion-view>

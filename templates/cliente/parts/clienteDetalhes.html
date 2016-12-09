@@ -1,0 +1,203 @@
+<!-- Detalhes-->
+<div class="list card manual-card-fullwidth manual-card-margin-top-remove">
+    <div class="item">
+        <div class="row">
+
+            <!--            <div class="col col-75 cliente-status">-->
+            <div class="col col cliente-status">
+                <p><span class="font-black">status:</span> <span class="span-active" ng-if="clienteObjeto.status">ativo</span>
+                    <span class="span-inactive" ng-if="!clienteObjeto.status">inativo</span></p>
+                <!--40 dias</p>-->
+                <p><span class="font-black">último pedido:</span> nenhum realizado</p>
+            </div>
+
+            <div class="col col-center cliente-status center" ng-if="clienteObjeto.status">
+                <a href="#/side-menu/novo-pedido" class="button button-clear button-positive button-novo-pedido-cliente">
+                    <i class="ion-bag"></i><span class="">novo<br > pedido</span>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+    <div ng-switch="clienteObjeto.cliente_tipo">
+        <!-- Salão de beleza -->
+        <div class="item" ng-switch-when="1">
+
+            <p>Contatos do salão</p>
+
+            <div class="row">
+                <div class="col text-center">
+                    <a ng-href="tel:{{clienteObjeto.salao.salao_celular}}" class="button button-clear button-positive button-novo-pedido-cliente" ng-if="clienteObjeto.salao.salao_celular">
+                        <i class="ion-social-whatsapp" style="font-size:24px"></i><span class="">celular</span>
+                    </a>
+                    <a class="button button-clear button-stable button-novo-pedido-cliente" ng-if="!clienteObjeto.salao.salao_celular" disabled>
+                        <i class="ion-social-whatsapp" style="font-size:24px"></i><span class="">celular</span>
+                    </a>
+                </div>
+                <div class="col text-center">
+                    <a ng-href="tel:{{clienteObjeto.salao.salao_tel_fixo}}" class="button button-clear button-positive button-novo-pedido-cliente" ng-if="clienteObjeto.salao.salao_tel_fixo">
+                        <i class="ion-android-call" style="font-size:24px"></i><span class="">fixo</span>
+                    </a>
+                    <a class="button button-clear button-stable button-novo-pedido-cliente" ng-if="!clienteObjeto.salao.salao_tel_fixo" disabled>
+                        <i class="ion-android-call" style="font-size:24px"></i><span class="">fixo</span>
+                    </a>
+                </div>
+
+                <!--
+            <div class="col center">
+                <a class="button button-clear button-positive button-novo-pedido-cliente" ng-click="openLink(clienteObjeto.facebook)">
+                    <i class="ion-social-facebook"></i><span class="">facebook</span>
+                </a>
+            </div>
+            <div class="col center">
+                <a class="button button-clear button-disable button-novo-pedido-cliente" ng-click="openLink(clienteObjeto.instagram)">
+                    <i class="ion-social-instagram-outline"></i><span class="">instagram</span>
+                </a>
+            </div>-->
+                <div class="col text-center" ng-if="clienteObjeto.salao.salao_site">
+                    <a class="button button-clear button-positive button-novo-pedido-cliente" ng-click="openLink(clienteObjeto.salao.salao_site)">
+                        <i class="ion-ios-world-outline" style="font-size:24px"></i><span class="">site</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        <!-- Profissional -->
+        <div class="item" ng-switch-when="2">
+
+            <p>Contatos do profissional</p>
+            <!--            <p><span class="font-black">Contatos do profissional</span></p>-->
+
+            <div class="row">
+                <div class="col text-center">
+                    <a ng-href="tel:{{clienteObjeto.pessoa.pessoa_celular}}" class="button button-clear button-positive button-novo-pedido-cliente" ng-if="clienteObjeto.pessoa.pessoa_celular">
+                        <i class="ion-social-whatsapp" style="font-size:24px"></i><span class="">celular</span>
+                    </a>
+                    <a class="button button-clear button-stable button-novo-pedido-cliente" ng-if="!clienteObjeto.pessoa.pessoa_celular" disabled>
+                        <i class="ion-social-whatsapp" style="font-size:24px"></i><span class="">celular</span>
+                    </a>
+                </div>
+                <div class="col text-center">
+                    <a ng-href="tel:{{clienteObjeto.pessoa.pessoa_tel_fixo}}" class="button button-clear button-positive button-novo-pedido-cliente" ng-if="clienteObjeto.pessoa.pessoa_tel_fixo">
+                        <i class="ion-android-call" style="font-size:24px"></i><span class="">fixo</span>
+                    </a>
+                    <a class="button button-clear button-stable button-novo-pedido-cliente" ng-if="!clienteObjeto.pessoa.pessoa_tel_fixo" disabled>
+                        <i class="ion-android-call" style="font-size:24px"></i><span class="">fixo</span>
+                    </a>
+                </div>
+
+                <!--
+            <div class="col center">
+                <a class="button button-clear button-positive button-novo-pedido-cliente" ng-click="openLink(clienteObjeto.facebook)">
+                    <i class="ion-social-facebook"></i><span class="">facebook</span>
+                </a>
+            </div>
+            <div class="col center">
+                <a class="button button-clear button-disable button-novo-pedido-cliente" ng-click="openLink(clienteObjeto.instagram)">
+                    <i class="ion-social-instagram-outline"></i><span class="">instagram</span>
+                </a>
+            </div>-->
+                <div class="col text-center" ng-if="clienteObjeto.pessoa.pessoa_site">
+                    <a class="button button-clear button-positive button-novo-pedido-cliente" ng-click="openLink(clienteObjeto.pessoa.pessoa_site)">
+                        <i class="ion-ios-world-outline" style="font-size:24px"></i><span class="">site</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div ng-switch="clienteObjeto.cliente_tipo">
+        <!-- Salão de beleza -->
+        <div class="item item-text-wrap" ng-switch-when="1">
+            <div class=" row ">
+                <div class="col ">
+                    <h2>Responsável - {{clienteObjeto.pessoa.ocupacao}}</h2>
+                    <p><strong>Nome:</strong> {{clienteObjeto.pessoa.pessoa_nome}} {{clienteObjeto.pessoa.pessoa_sobrenome}}</p>
+                    <p ng-if="clienteObjeto.pessoa.pessoa_tel_fixo"><strong>Tel:</strong> <a ng-href="tel:{{clienteObjeto.pessoa.pessoa_tel_fixo}}">{{clienteObjeto.pessoa.pessoa_tel_fixo}}</a></p>
+                    <p><strong>Cel:</strong> <a ng-href="tel:{{clienteObjeto.pessoa.pessoa_celular}}">{{clienteObjeto.pessoa.pessoa_celular}}</a></p>
+                    <p ng-if="clienteObjeto.salao.salao_email"><strong>E-mail:</strong> <a ng-href="mail:{{clienteObjeto.salao.salao_email}}">{{clienteObjeto.salao.salao_email}}</a></p>
+                    <p ng-if="clienteObjeto.pessoa.pessoa_data_nasc"><strong>Aniversário:</strong> {{mostradata(clienteObjeto.pessoa.pessoa_data_nasc)}}</p>
+                    <p ng-if="clienteObjeto.pessoa.sexo"><strong>Sexo:</strong> {{clienteObjeto.pessoa.sexo}}</p>
+
+                    <div style="height:20px;"></div>
+
+                    <h2>Dados do Salão</h2>
+                    <p><strong>Nome do salão:</strong> {{clienteObjeto.salao.salao_nome_fantasia}}</p>
+                    <p ng-if="clienteObjeto.salao.salao_tel_fixo"><strong>Tel:</strong> <a ng-href="tel:{{clienteObjeto.salao.salao_tel_fixo}}">{{clienteObjeto.salao.salao_tel_fixo}}</a></p>
+                    <p ng-if="clienteObjeto.salao.salao_celular"><strong>Cel:</strong> <a ng-href="tel:{{clienteObjeto.salao.salao_celular}}">{{clienteObjeto.salao.salao_celular}}</a></p>
+                    <p ng-if="clienteObjeto.salao.salao_email"><strong>E-mail:</strong> <a ng-href="mail:{{clienteObjeto.salao.salao_email}}">{{clienteObjeto.salao.salao_email}}</a></p>
+                    <p ng-if="clienteObjeto.salao.salao_site"><strong>Site:</strong> <a ng-click="openLink(clienteObjeto.salao.salao_site)">{{clienteObjeto.salao.salao_site}}</a></p>
+                    <p><strong>Endereço:</strong> {{clienteObjeto.endereco.logradouro}}, {{clienteObjeto.endereco.numero}}</p>
+                    <p ng-if="clienteObjeto.endereco.complemento"><strong>Complemento:</strong> {{clienteObjeto.endereco.complemento}}</p>
+                    <p><strong>Bairro:</strong> {{clienteObjeto.endereco.bairro}}</p>
+                    <p><strong>CEP:</strong> {{clienteObjeto.endereco.cep}}</p>
+                    <p><strong>Cidade:</strong> {{clienteObjeto.endereco.localidade}} - {{clienteObjeto.endereco.uf}}</p>
+
+                    <div style="height:20px;"></div>
+
+                    <h2>Faturamento</h2>
+                    <p><strong>Natureza:</strong> {{clienteObjeto.dados.pessoa}}</p>
+                    <p ng-if="clienteObjeto.dados.cat_empresa"><strong>Tipo:</strong> {{clienteObjeto.dados.cat_empresa}}</p>
+                    <p ng-if="clienteObjeto.dados.razao_social"><strong>Razão Social:</strong> {{clienteObjeto.dados.razao_social}}</p>
+                    <p ng-if="clienteObjeto.dados.cnpj"><strong>CNPJ:</strong> {{clienteObjeto.dados.cnpj}}</p>
+                    <p ng-if="clienteObjeto.dados.insc_estadual"><strong>Ins. Estadual:</strong> {{clienteObjeto.dados.insc_estadual}}</p>
+                    <p ng-if="clienteObjeto.dados.cpf"><strong>CPF:</strong> {{clienteObjeto.dados.cpf}}</p>
+                    <p ng-if="clienteObjeto.dados.rg"><strong>RG:</strong> {{clienteObjeto.dados.rg}}</p>
+                </div>
+            </div>
+        </div>
+        <!-- -->
+        <!-- Cabeleireiro -->
+        <div class="item item-text-wrap" ng-switch-when="2">
+            <div class=" row ">
+                <div class="col ">
+                    <h2>{{clienteObjeto.pessoa.ocupacao}}</h2>
+                    <p><strong>Nome:</strong> {{clienteObjeto.pessoa.pessoa_nome}} {{clienteObjeto.pessoa.pessoa_sobrenome}}</p>
+                    <p ng-if="clienteObjeto.pessoa.pessoa_tel_fixo"><strong>Tel:</strong> <a ng-href="tel:{{clienteObjeto.pessoa.pessoa_tel_fixo}}">{{clienteObjeto.pessoa.pessoa_tel_fixo}}</a></p>
+                    <p><strong>Cel:</strong> <a ng-href="tel:{{clienteObjeto.pessoa.pessoa_celular}}">{{clienteObjeto.pessoa.pessoa_celular}}</a></p>
+                    <p ng-if="clienteObjeto.salao.salao_email"><strong>E-mail:</strong> <a ng-href="mail:{{clienteObjeto.salao.salao_email}}">{{clienteObjeto.salao.salao_email}}</a></p>
+                    <p ng-if="clienteObjeto.pessoa.pessoa_data_nasc"><strong>Aniversário:</strong> {{mostradata(clienteObjeto.pessoa.pessoa_data_nasc)}}</p>
+                    <p ng-if="clienteObjeto.pessoa.sexo"><strong>Sexo:</strong> {{clienteObjeto.pessoa.sexo}}</p>
+
+                    <div style="height:20px;"></div>
+
+                    <h2 ng-if="!clienteObjeto.salao">Endereço de entrega <span ng-if="clienteObjeto.salao">- no Salão</span></h2>
+                    <p ng-if="clienteObjeto.salao.salao_nome_fantasia"><strong>Nome do salão:</strong> {{clienteObjeto.salao.salao_nome_fantasia}}</p>
+                    <p ng-if="clienteObjeto.salao.salao_tel_fixo"><strong>Tel:</strong> <a ng-href="tel:{{clienteObjeto.salao.salao_tel_fixo}}">{{clienteObjeto.salao.salao_tel_fixo}}</a></p>
+                    <p ng-if="clienteObjeto.salao.salao_celular"><strong>Cel:</strong> <a ng-href="tel:{{clienteObjeto.salao.salao_celular}}">{{clienteObjeto.salao.salao_celular}}</a></p>
+                    <p ng-if="clienteObjeto.salao.salao_email"><strong>E-mail:</strong> <a ng-href="mail:{{clienteObjeto.salao.salao_email}}">{{clienteObjeto.salao.salao_email}}</a></p>
+                    <p ng-if="clienteObjeto.salao.salao_site"><strong>Site:</strong> <a ng-click="openLink(clienteObjeto.salao.salao_site)">{{clienteObjeto.salao.salao_site}}</a></p>
+                    <p><strong>Endereço:</strong> {{clienteObjeto.endereco.logradouro}}, {{clienteObjeto.endereco.numero}}</p>
+                    <p ng-if="clienteObjeto.endereco.complemento"><strong>Complemento:</strong> {{clienteObjeto.endereco.complemento}}</p>
+                    <p><strong>Bairro:</strong> {{clienteObjeto.endereco.bairro}}</p>
+                    <p><strong>CEP:</strong> {{clienteObjeto.endereco.cep}}</p>
+                    <p><strong>Cidade:</strong> {{clienteObjeto.endereco.localidade}} - {{clienteObjeto.endereco.uf}}</p>
+
+                    <div style="height:20px;"></div>
+
+                    <h2>Faturamento</h2>
+                    <p><strong>Natureza:</strong> {{clienteObjeto.dados.pessoa}}</p>
+                    <p ng-if="clienteObjeto.dados.cat_empresa"><strong>Tipo:</strong> {{clienteObjeto.dados.cat_empresa}}</p>
+                    <p ng-if="clienteObjeto.dados.razao_social"><strong>Razão Social:</strong> {{clienteObjeto.dados.razao_social}}</p>
+                    <p ng-if="clienteObjeto.dados.cnpj"><strong>CNPJ:</strong> {{clienteObjeto.dados.cnpj}}</p>
+                    <p ng-if="clienteObjeto.dados.insc_estadual"><strong>Ins. Estadual:</strong> {{clienteObjeto.dados.insc_estadual}}</p>
+                    <p ng-if="clienteObjeto.dados.cpf"><strong>CPF:</strong> {{clienteObjeto.dados.cpf}}</p>
+                    <p ng-if="clienteObjeto.dados.rg"><strong>RG:</strong> {{clienteObjeto.dados.rg}}</p>
+                </div>
+            </div>
+        </div>
+        <!-- -->
+    </div>
+    <!--
+<div class="item ">
+    <div class="row ">
+        <div class="col ">
+            <button class="button button-energized ">Suspender</button>
+        </div>
+    </div>
+</div>
+-->
+</div>
+<!-- End detalhes-->

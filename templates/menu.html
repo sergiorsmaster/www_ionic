@@ -1,0 +1,44 @@
+<ion-side-menus enable-menu-with-back-views="false" class="bar-menu-color">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-dark">
+            <ion-nav-back-button></ion-nav-back-button>
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="side-menu"></ion-nav-view>
+    </ion-side-menu-content>
+    <ion-side-menu side="left" id="side-menu" class="bar-menu-color">
+        <ion-header-bar class="bar-menu bar-menu-color">
+            <div class="row">
+                <h3 style="color:#fff">Sweet Minha Empresa</h3>
+                <!--
+                <div class="col col-33">
+                    <div class="perfil">
+                        <div class="menu-foto-perfil">
+                            <img src="img/eduardo_perfil_email.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <p class="menu-perfil nome">Eduardo Souza</p>
+                    <p class="menu-perfil cidade">São Paulo - SP</p>
+                    <p class="menu-perfil"><i class="icon ion-star pontuacao-star"></i><i class="icon ion-star pontuacao-star"></i><i class="icon ion-star pontuacao-star"></i><i class="icon ion-star pontuacao-star"></i><i class="icon ion-star pontuacao-star"></i> 4,62</p>
+                </div>
+-->
+            </div>
+
+        </ion-header-bar>
+        <ion-content padding="false" class="side-menu-left has-header-menu content-black">
+            <ion-list id="menu-list3" class="content-black">
+                <ion-item id="menu-list-home" ui-sref="menu.inicio" menu-close="" class="  ">Início</ion-item>
+                <ion-item id="menu-list-novo-pedido" ui-sref="menu.novo-pedido" menu-close="" class=" ">Novo pedido</ion-item>
+                <ion-item id="menu-list-clientes" ui-sref="menu.meus_clientes" menu-close="" class="  ">Meus clientes</ion-item>
+                <ion-item id="menu-list-clientes" ui-sref="menu.novo_cliente" menu-close="" class="  ">Novo cliente</ion-item>
+                <ion-item id="menu-list-perfil" ui-sref="menu.perfil" menu-close="" class="  ">Meu Perfil</ion-item>
+                <ion-item id="menu-list-cdperfil" ui-sref="menu.cdperfil" menu-close="" class="  ">Meu Centro de Distribuição</ion-item>
+                <ion-item id="menu-list-clientes" ui-sref="menu.configuracoes" menu-close="" class="  ">Configurações</ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>

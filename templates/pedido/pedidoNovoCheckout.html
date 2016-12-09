@@ -1,0 +1,92 @@
+<ion-view title="Checkout" id="novo_pedido_checkout" class=" ">
+    <ion-nav-bar class="bar-positive-pedido">
+        <ion-nav-back-button></ion-nav-back-button>
+        <ion-nav-buttons side="secondary">
+            <button class="button button-clear button-small button-car" ng-click="abreCarrinho()">
+                {{getTotal(cart) | currency}}
+            </button>
+            <span class="quant-button-car">{{getTotalItens(cart)}}</span>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+    <div class="bar bar-subheader bar-dark">
+        <div style="display:block">
+            <div class="title title-left" style="width:75%;">
+                {{cliente.nome}}
+            </div>
+            <button class="button button-clear" ng-click="modal.show()">
+                <i class="icon ion-android-open"></i>
+            </button>
+        </div>
+    </div>
+
+    <ion-content padding="false" class="has-subheader manual-remove-top-padding">
+        <ion-list id="formchekout">
+
+            <div class="item item-divider">
+                <b>Forma de pagamento:</b> {{checkout.formaPag}}
+            </div>
+            <ion-radio ng-model="checkout.formaPag" ng-value="'boleto'" name="formapagamento">Boleto</ion-radio>
+            <ion-radio ng-model="checkout.formaPag" ng-value="'credito'" name="formapagamento">Crédito</ion-radio>
+
+            <div class="item item-divider">
+                <b>Condições de pagamento:</b>
+            </div>
+            <ion-radio ng-model="checkout.condPag" ng-value="'vista'" name="condpagamento">A vista</ion-radio>
+            <ion-radio ng-model="checkout.condPag" ng-value="'parcelado'" name="condpagamento">Parcelado</ion-radio>
+            <label class="item item-input item-select" ng-if="checkout.condPag == 'parcelado'" for="parcelas">
+                <div class="input-label">
+                    <b>Quantidade de parcelas</b>
+                </div>
+                <select name="parcelas" id="parcelas" ng-model="checkout.parcelas">
+                    <option value="1" selected>1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </label>
+
+            <div class="item item-divider">
+                <b>Frete:</b> {{checkout.frete}}
+            </div>
+            <ion-radio ng-model="checkout.frete" ng-value="'eu'" name="frete">Eu entrego</ion-radio>
+            <ion-radio ng-model="checkout.frete" ng-value="'transportadora'" name="frete">Preciso de uma transportadora</ion-radio>
+            <div class="item item-divider">
+                <b>Observações:</b>
+            </div>
+            <label class="item item-input">
+                <textarea placeholder="Coloque suas observações do pedido aqui..." rows="4" ng-model="checkout.obs"></textarea>
+            </label>
+
+        </ion-list>
+
+
+    </ion-content>
+
+    <!--footer-->
+    <ion-footer-bar class="bar" id="pedido-button-footer">
+        <div class="botao-left">
+            <a class="button button-clear" ng-click="cancelarPedido(3)">Cancelar</a>
+        </div>
+        <div class="botao-right">
+            <a class="button button-clear icon-right ion-ios-arrow-right pull-right" ng-click="enviaPedido(checkout)" ng-if="checkout.formaPag && checkout.condPag && checkout.frete">ENVIAR PEDIDO</a>
+            <a class="button button-clear icon-right ion-ios-arrow-right pull-right" ng-if="!checkout.formaPag && !checkout.condPag && !checkout.frete" disabled>ENVIAR PEDIDO</a>
+        </div>
+    </ion-footer-bar>
+
+
+
+</ion-view>
+
+
+<script id="cliente.html" type="text/ng-template">
+    <ion-modal-view>
+        <ion-header-bar>
+            <h1 class="title">Cliente</h1>
+            <button class="button button-clear button-primary" ng-click="modal.hide()">Fechar</button>
+        </ion-header-bar>
+        <ion-content>
+            <sh-cliente-page cliente-objeto="cliente"></sh-cliente-page>
+        </ion-content>
+    </ion-modal-view>
+</script>
